@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Sora, Space_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -11,6 +12,17 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+
+const space_mono = Space_Mono({
+  subsets: ["latin"],
+  weight:["400","700"],
+  variable:"--font_spaceMono"
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable:"--font_sora"
 });
 
 export const metadata: Metadata = {
@@ -26,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${space_mono.variable} antialiased`}
       >
         {children}
       </body>
