@@ -3,13 +3,12 @@ import arrowRight from "@/assets/icons/ArrowLineRight.svg";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import UsersThree from "@/assets/icons/UsersThree.svg";
 
 import { TextSmallRegular } from "./typography";
 import {
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "./ui/accordion";
 interface SidebarMenuItemProps {
   title: string;

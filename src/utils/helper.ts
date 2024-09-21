@@ -11,7 +11,7 @@ import UsersThree from "@/assets/icons/UsersThree.svg";
 export const dashboardSidemenuContent = [
   {
     title: "Default",
-    icon:ChartPieSlice,
+    icon: ChartPieSlice,
     contents: [
       {
         title: "Optical",
@@ -24,55 +24,55 @@ export const dashboardSidemenuContent = [
   },
   {
     title: "eCommerce​",
-    icon:ShoppingBagOpen,
+    icon: ShoppingBagOpen,
     contents: [
       {
         title: "Text",
-        },
+      },
       {
         title: "Speech",
-        },
+      },
       {
         title: "Voice Over",
-        },
+      },
     ],
     url: "/solutions/speech",
   },
   {
     title: "Projects",
-    icon:FolderNotch,
+    icon: FolderNotch,
     contents: [
       {
         title: "Translation",
-        },
+      },
       {
         title: "Transliteration",
-        },
+      },
       {
         title: "Transcription",
-        },
+      },
       {
         title: "Summarization",
-        },
+      },
       {
         title: "Quiz ",
-        },
+      },
       {
         title: "Sentiment ",
-        },
+      },
     ],
     url: "https://www.tarento.com/case-studies/anuvaad-domain-specific-translation-engine-for-the-supreme-court-of-india/",
   },
   {
     title: "Online Courses",
-    icon:BookOpen,
+    icon: BookOpen,
     contents: [
       {
         title: "Digital ",
-        },
+      },
       {
         title: "Enterprise ",
-        },
+      },
     ],
     url: "",
   },
@@ -81,82 +81,85 @@ export const dashboardSidemenuContent = [
 export const pageSidemenuContent = [
   {
     title: "User Profile",
-    icon:IdentificationCard,
+    icon: IdentificationCard,
     contents: [
       {
         title: "Optical  ",
-        },
+      },
       {
         title: "Text  ",
-        },
+      },
     ],
     url: "/solutions/digitization",
   },
   {
     title: "Account",
-    icon:IdentificationBadge,
+    icon: IdentificationBadge,
     contents: [
       {
         title: "Text",
-        },
+      },
       {
         title: "Speech",
-        },
+      },
       {
         title: "Voice ",
-        },
+      },
     ],
     url: "/solutions/speech",
   },
   {
     title: "Corporate",
-    icon:UsersThree,
+    icon: UsersThree,
     contents: [
       {
         title: "Translation",
-        },
+      },
       {
         title: "Transliteration",
-        },
+      },
       {
         title: "Transcription",
-        },
+      },
       {
         title: "Summarization",
-        },
+      },
       {
         title: "Quiz",
-        },
+      },
       {
         title: "Sentiment ",
-        },
+      },
     ],
     url: "https://www.tarento.com/case-studies/anuvaad-domain-specific-translation-engine-for-the-supreme-court-of-india/",
   },
   {
     title: "Blog",
-    icon:Notebook,
+    icon: Notebook,
     contents: [
       {
         title: "Digital ",
-        },
+      },
       {
         title: "Enterprise ",
-        },
+      },
     ],
     url: "Social",
   },
   {
     title: "Social",
-    icon:ChatsTeardrop,
+    icon: ChatsTeardrop,
     contents: [
       {
         title: "Digital ",
-        },
+      },
       {
         title: "Enterprise",
-        },
+      },
     ],
     url: "Social",
   },
 ];
+
+export const favourites = ["Overview", "Projects"];
+export const recents = ["Campaigns", "Documents","Followers"];

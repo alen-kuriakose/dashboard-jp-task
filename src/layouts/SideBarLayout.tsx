@@ -1,33 +1,28 @@
 "use client";
 import avatar from "@/assets/images/ByeWind.png";
-import { SidebarMenu } from "@/components";
+import { AvatarComponent, SidebarMenu } from "@/components";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
-import { dashboardSidemenuContent, pageSidemenuContent } from "@/utils/helper";
+import {
+  dashboardSidemenuContent,
+  favourites,
+  pageSidemenuContent,
+  recents,
+} from "@/utils/helper";
+import { FavSection } from "@/components/favSection";
 
 export function SideBarLayout() {
   return (
     <div>
       <div className="hidden border-r md:block pt-5 h-full max-h-screen">
         <div className="flex h-full max-h-screen flex-col gap-4 px-4 lg:px-4">
-          <div className="flex justify-start p-1">
-            <Link href="/" className="flex items-center gap-2 font-semibold">
-              <Image
-                src={avatar}
-                alt={"profile_avatar"}
-                width={24}
-                height={24}
-              />
-              <span className="text-sm text-dark dark:text-white font-normal">
-                ByeWind
-              </span>
-            </Link>
-          </div>
+          <AvatarComponent avatarImg={avatar} name={"ByeWind"} />
           <div className="flex-1">
             <nav className="grid items-start text-sm font-medium gap-4">
+              <FavSection favList={favourites} recentList={recents} />
               <SidebarMenu
                 header="Dashboard"
                 content={dashboardSidemenuContent}
