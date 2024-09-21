@@ -17,16 +17,17 @@ import {
   BreadcrumbSeparator,
 } from "./ui/breadcrumb";
 import { Search } from "./search";
+import { ThemeToggler } from "./themeToggle";
 
 export const Navbar = () => {
   const activeCardIndex = useRecoilValue(ActiveIndexServicesCard);
   return (
     <nav className="px-[1.75rem] py-5 border-b flex justify-between">
       <div className="flex gap-2">
-        <div className="p-1">
+        <div className="p-1 dark:invert">
           <Image src={star} alt="" width={20} height={20} />
         </div>
-        <div className="p-1">
+        <div className="p-1 dark:invert">
           <Image src={sidebar} alt="" width={20} height={20} />
         </div>
         <Breadcrumb className="px-2">
@@ -34,14 +35,14 @@ export const Navbar = () => {
             <BreadcrumbItem>
               <BreadcrumbLink
                 href="/"
-                className="font-inter text-sm font-normal"
+                className="font-inter text-sm font-normal text-dark/40 dark:text-white/40"
               >
                 Dashboard
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="font-inter text-sm font-normal">
+              <BreadcrumbPage className="font-inter text-sm font-normal text-dark dark:text-white">
                 {activeCardIndex}
               </BreadcrumbPage>
             </BreadcrumbItem>
@@ -50,18 +51,19 @@ export const Navbar = () => {
       </div>
       <div className="flex gap-2">
         <Search/>
-        <div className="p-1">
+        <div className="p-1 dark:invert">
           <Image src={sun} alt="" width={20} height={20} />
         </div>
-        <div className="p-1">
+        <div className="p-1 dark:invert">
           <Image src={clock} alt="" width={20} height={20} />
         </div>
-        <div className="p-1">
+        <div className="p-1 dark:invert">
           <Image src={bell} alt="" width={20} height={20} />
         </div>
-        <div className="p-1">
+        <div className="p-1 dark:invert">
           <Image src={sidebar} alt="" width={20} height={20} />
         </div>
+        <ThemeToggler/>
       </div>
     </nav>
   );

@@ -5,8 +5,8 @@ import React from "react";
 export function ThemeToggler() {
   const { setTheme } = useTheme();
   return (
-    <div className="text-dark">
-      <div>
+    <div className="text-dark ">
+      <div className="flex">
         <div
           onClick={() => {
             setTheme("light");
