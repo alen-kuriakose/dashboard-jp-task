@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Badge } from "./Badge";
+import { Badge } from "./badge";
 
 type HeaderProps={
     title:string,
@@ -15,5 +15,6 @@ export const Header = ({ title, subtitle, company }:HeaderProps) => (
       </h1>
       <div className="font-spaceMono font-normal text-gray-400 sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-[1.0625rem]">{subtitle}</div>
       <div className="font-spaceMono font-normal text-white sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">{company}</div>
+      
     </div>
   );
