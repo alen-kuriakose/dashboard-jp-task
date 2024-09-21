@@ -27,7 +27,7 @@ export function SideBarLayout() {
             </Link>
           </div>
           <div className="flex-1">
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+            <nav className="grid items-start text-sm font-medium gap-4">
               <SidebarMenu
                 header="Dashboard"
                 content={dashboardSidemenuContent}
@@ -54,7 +54,7 @@ export function SideBarLayout() {
               side="left"
               className="flex flex-col bg-white dark:bg-black"
             >
-              <nav className="grid gap-2 text-lg font-medium">
+              <nav className="grid gap-2 text-lg font-medium ">
                 <div className="flex justify-start p-1">
                   <Link
                     href="/"
@@ -75,6 +75,7 @@ export function SideBarLayout() {
                   header="Dashboard"
                   content={dashboardSidemenuContent}
                 />
+                <SidebarMenu header="Pages" content={pageSidemenuContent} />
               </nav>
               {/* <div className="mt-auto">
                 <Card>
