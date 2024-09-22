@@ -1,7 +1,7 @@
 // import { ActiveIndexServicesCard } from "@/states/GlobalState";
 import { WidgetChartData } from "@/utils/helper";
 // import { useRecoilValue } from "recoil";
-import { StackedBarChart, WidgetChart } from "../charts";
+import { AreaChartComponent, StackedBarChart, WidgetChart } from "../charts";
 import { TextSmallSemibold } from "../typography";
 // type DashboardSectionProps = {};
 
@@ -34,6 +34,9 @@ export function DashboardSection() {
         </div>
         <div className="col-span-12 lg:col-span-6">
           <StackedBarChart />
+        </div>
+        <div className="col-span-8">
+          <AreaChartComponent />
         </div>
       </div>
     </div>
