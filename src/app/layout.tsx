@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/themes-provider";
 import type { Metadata } from "next";
 import { Inter, Sora, Space_Mono } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font_inter",
@@ -34,14 +34,15 @@ export default function RootLayout({
       <body
         className={` ${sora.variable} ${space_mono.variable} ${inter.variable} antialiased`}
       >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
