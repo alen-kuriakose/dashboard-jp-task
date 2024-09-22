@@ -45,10 +45,10 @@ const chartConfig = {
 
 export function StackedBarChart() {
   return (
-    <Card className="border-0 bg-primary-light dark:bg-white/15">
+    <Card className="border-0 bg-primary-light dark:bg-white/15 shadow-none">
       {" "}
       {/* Adjust overall card height */}
-      <CardHeader>
+      <CardHeader className="pb-4">
         <CardTitle className="font-inter font-semibold text-sm">Projections vs Actuals</CardTitle>
       </CardHeader>
       <CardContent>
@@ -62,7 +62,7 @@ export function StackedBarChart() {
               axisLine={{ stroke: 'rgba(28, 28, 28, .1)' }}
               tickFormatter={(value) => value.slice(0, 3)}
             />
-            <YAxis tickLine={false} tickMargin={2} axisLine={false} />
+            <YAxis tickLine={false} tickMargin={2} axisLine={false} width={30}/>
             <ChartTooltip content={<ChartTooltipContent hideLabel />} />
             {/* <ChartLegend content={<ChartLegendContent />} /> */}
             <Bar
