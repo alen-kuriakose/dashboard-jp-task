@@ -1,6 +1,6 @@
 "use client";
 import avatar from "@/assets/images/ByeWind.png";
-import { AvatarComponent, SidebarMenu } from "@/components";
+import { AvatarComponent, Navbar, SidebarMenu } from "@/components";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -33,7 +33,7 @@ export function SideBarLayout() {
         </div>
       </div>
       <div className="flex flex-col md:hidden bg-white ">
-        <header className="flex h-14 items-center gap-4 border-b px-4 lg:h-[60px] lg:px-6 bg-white dark:bg-black">
+        <header className="flex h-14 items-center gap-4 border-b px-4 lg:h-[60px] lg:px-6 bg-white dark:bg-black justify-start w-full">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -66,6 +66,7 @@ export function SideBarLayout() {
                     </span>
                   </Link>
                 </div>
+                <FavSection favList={favourites} recentList={recents} />
                 <SidebarMenu
                   header="Dashboard"
                   content={dashboardSidemenuContent}
@@ -90,6 +91,7 @@ export function SideBarLayout() {
               </div> */}
             </SheetContent>
           </Sheet>
+          <Navbar />
         </header>
       </div>
     </div>

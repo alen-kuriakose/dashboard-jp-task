@@ -10,14 +10,16 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "./ui/accordion";
+interface ContentItem {
+    title: string;
+  }
 interface SidebarMenuItemProps {
   title: string;
-  description: string;
   icon: string;
   index: number;
   isActive: boolean;
   onClick: () => void;
-  contents?: Array<any>;
+  contents?: Array<ContentItem>;
   clicked?: boolean;
   url: string;
 }
@@ -25,12 +27,10 @@ interface SidebarMenuItemProps {
 export const SidebarMenuItem = ({
   title,
   icon,
-  index,
   isActive,
   onClick,
   clicked,
   contents,
-  url,
 }: SidebarMenuItemProps) => {
   const [containsTree, setContainsTree] = useState(false);
   useEffect(() => {

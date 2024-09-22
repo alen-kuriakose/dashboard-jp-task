@@ -7,3 +7,5 @@ export { SidebarMenuItem } from "./sideBarMenuItem";
 export { AvatarComponent } from "./avatarComponent";
 export { Navbar } from "./navbar";
 export { Search } from "./search";
+export { NotificationPanel } from "./notificationPanel";
+export { NotificationGroup } from "./notificationGroup";

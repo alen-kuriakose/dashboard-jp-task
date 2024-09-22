@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 type AvatarComponentProps = {
-  avatarImg: any;
+  avatarImg: StaticImageData;
   name: string;
 };
 

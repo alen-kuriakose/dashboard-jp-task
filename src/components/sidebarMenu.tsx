@@ -6,8 +6,21 @@ import { SidebarMenuItem } from "./sideBarMenuItem";
 import { TextSmallRegular } from "./typography";
 import { Accordion } from "./ui/accordion";
 
+interface ContentItem {
+    title: string;
+  }
+  
+  interface MenuItem {
+    title: string;
+    icon: string;
+    contents?: Array<ContentItem>;
+    url: string;
+    description?: string;
+  }
+
+
 type SidebarMenuProps = {
-  content: Array<any>;
+  content: Array<object>;
   header: string;
 };
 
@@ -34,14 +47,13 @@ export const SidebarMenu = ({ content, header }: SidebarMenuProps) => {
       </div>
       <div className="flex flex-col gap-1 w-full">
         <Accordion type="single" collapsible>
-          {content.map((item: any, index: number) => {
+          {(content as MenuItem[]).map((item: MenuItem, index: number) => {
             return (
               // <div key={index} className="flex">
               // <ServiceCard image={item.image} title={item.title} />
               <SidebarMenuItem
                 contents={item.contents}
                 title={item.title}
-                description={item.description}
                 index={index}
                 isActive={item.title === activeCardIndex}
                 onClick={() => handleActiveIndex(item.title)}

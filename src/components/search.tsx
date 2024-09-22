@@ -2,25 +2,28 @@
 import searchIcon from "@/assets/icons/Search.svg";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-export const Search = () => {
-  const inputRef = useRef(null);
+type SearchProps = {
+  keyboardActionReq?: boolean;
+};
+export const Search = ({ keyboardActionReq }: SearchProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const handleKeyDown = (event: any) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key === "/") {
         event.preventDefault();
         inputRef.current?.focus();
       }
     };
 
-    document.addEventListener("keydown", handleKeyDown);
+    keyboardActionReq && document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
   return (
-    <div className="relative w-40">
+    <div className="relative w-full lg:w-40">
       <input
         ref={inputRef}
         type="text"
@@ -30,11 +33,13 @@ export const Search = () => {
       <div className="absolute inset-y-0 left-0 pl-2 flex items-center pointer-events-none dark:invert">
         <Image src={searchIcon} className="h-5 w-5" alt={"search"} />
       </div>
-      <div className="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
-        <kbd className="hidden sm:inline-block px-2 py-1 text-sm font-inter font-normal text-dark/20 dark:text-white/20  rounded-md">
-          ⌘/
-        </kbd>
-      </div>
+      {keyboardActionReq && (
+        <div className="absolute inset-y-0 right-0 pr-2 flex items-center pointer-events-none">
+          <kbd className="hidden sm:inline-block px-2 py-1 text-sm font-inter font-normal text-dark/20 dark:text-white/20  rounded-md">
+            ⌘/
+          </kbd>
+        </div>
+      )}
     </div>
   );
 };
