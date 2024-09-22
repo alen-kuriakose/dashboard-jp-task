@@ -37,7 +37,7 @@ export const SidebarMenuItem = ({
     if (contents && contents.length > 0) {
       setContainsTree(true);
     }
-  }, []);
+  }, [contents]);
 
   return (
     <div>

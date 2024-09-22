@@ -23,7 +23,7 @@ export const Search = ({ keyboardActionReq }: SearchProps) => {
     };
   }, []);
   return (
-    <div className="relative w-full lg:w-40">
+    <div className="relative w-full md:w-40">
       <input
         ref={inputRef}
         type="text"

@@ -4,7 +4,7 @@ import { notificationGroupContent1, notificationGroupContent2, notificationGroup
 
 export function NotificationPanel() {
   return (
-    <div className="lg:min-w-[17.5rem] border-l h-screen p-5">
+    <div className="lg:min-w-[17.5rem] border-l h-screen p-5 transition-all duration-300 ease-in-out overflow-y-scroll">
       <NotificationGroup
         content={notificationGroupContent1}
         lineReq={false}

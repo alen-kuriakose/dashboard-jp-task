@@ -249,3 +249,42 @@ export const notificationGroupContent3 = [
 
 export const favourites = ["Overview", "Projects"];
 export const recents = ["Campaigns", "Documents", "Followers"];
+
+export const WidgetChartData = [
+  {
+    widgetName: "Customers",
+    mainValue: "3,781",
+    growth: "11.01",
+    isRevRelated: false,
+    fontClass: "text-dark dark:text-dark",
+    className: "bg-primary-blue",
+    icnClr: "",
+  },
+  {
+    widgetName: "Orders",
+    mainValue: "1,219",
+    growth: "0.03",
+    isRevRelated: false,
+    fontClass: "text-dark dark:text-white dark;invert",
+    className: "bg-primary-light dark:bg-white/15",
+    icnClr: "dark:invert",
+  },
+  {
+    widgetName: "Revenue",
+    mainValue: "695",
+    growth: "15.03",
+    isRevRelated: true,
+    fontClass: "text-dark dark:text-white",
+    className: "bg-primary-light dark:bg-white/15 ",
+    icnClr: "dark:invert",
+  },
+  {
+    widgetName: "Growth",
+    mainValue: "30.1%",
+    growth: "6.08",
+    isRevRelated: false,
+    fontClass: "text-dark dark:text-dark",
+    className: "bg-primary-purple",
+    icnClr: "",
+  },
+];
