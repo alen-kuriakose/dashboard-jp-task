@@ -27,8 +27,8 @@ export const LandingPage = () => {
       <CircularAsset classname=" -bottom-24 -right-20 tablet:bottom-[-15.5375rem] laptop:bottom-[-20.5375rem]  desktop:bottom-[-28.5375rem] tablet:left-[26.0625rem] laptop:left-[41.0625rem] desktop:left-[61.0625rem] tv:right-10 rotate-[-33.8deg]  w-[19.545rem] md:w-[24.0544rem] lg:w-[32.0087rem] xl:w-[40rem]   2xl:w-[44.1331rem] tv:w-[80rem] h-[282.00px] md:h-[339.17px] lg:[h-425.67px] xl:h-[32rem] 2xl:h-[39.8081rem] tv:h-[54rem] bg-[#A287F4] opacity-80 blur-[128px] rounded-full" />
 
       {/* Full-screen Overlay Image */}
-      <div className="absolute h-full">
-        <Image src={overlay} alt="overlay effect" className="h-full" />
+      <div className="absolute h-full w-full">
+        <Image src={overlay} alt="overlay effect" className="h-full w-full" />
       </div>
     </>
   );
