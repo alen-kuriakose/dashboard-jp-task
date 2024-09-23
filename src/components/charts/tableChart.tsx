@@ -6,39 +6,9 @@ import {
     TableHeader,
     TableRow
 } from "@/components/ui/table";
+import { invoices } from "@/utils/helper";
 
-const invoices = [
-  {
-    item: "ASOS Ridley High Waist",
-    price: "$79.49",
-    quantity: 82,
-    total: 6518.18,
-  },
-  {
-    item: "Marco Lightweight Shirt",
-    price: "$128.50",
-    quantity: 37,
-    total: 4754.5,
-  },
-  {
-    item: "Half Sleeve Shirt",
-    price: "$39.99",
-    quantity: 64,
-    total: 2559.36,
-  },
-  {
-    item: "Lightweight Jacket",
-    price: "$20.00",
-    quantity: 184,
-    total: 3680.0,
-  },
-  {
-    item: "Marco Shoes",
-    price: "$79.49",
-    quantity: 64,
-    total: 1965.81,
-  },
-];
+
 
 export function TableChart() {
   return (

@@ -295,31 +295,148 @@ type Location = {
   city: string;
   coordinates: [number, number]; // Ensures that coordinates will always be a tuple
   value: number;
-  progress:number
+  progress: number;
 };
 export const locations: Location[] = [
   {
     city: "New York",
     coordinates: [40.7128, -74.006],
     value: 72000,
-    progress:78
+    progress: 78,
   },
   {
     city: "San Francisco",
     coordinates: [37.7749, -122.4194],
     value: 39000,
-    progress:26
+    progress: 26,
   },
   {
     city: "Sydney",
     coordinates: [-33.8688, 151.2093],
     value: 25000,
-    progress:34
+    progress: 34,
   },
   {
     city: "Singapore",
     coordinates: [1.3521, 103.8198],
     value: 61000,
-    progress:70
+    progress: 70,
   },
 ];
+
+export const invoices = [
+  {
+    item: "ASOS Ridley High Waist",
+    price: "$79.49",
+    quantity: 82,
+    total: 6518.18,
+  },
+  {
+    item: "Marco Lightweight Shirt",
+    price: "$128.50",
+    quantity: 37,
+    total: 4754.5,
+  },
+  {
+    item: "Half Sleeve Shirt",
+    price: "$39.99",
+    quantity: 64,
+    total: 2559.36,
+  },
+  {
+    item: "Lightweight Jacket",
+    price: "$20.00",
+    quantity: 184,
+    total: 3680.0,
+  },
+  {
+    item: "Marco Shoes",
+    price: "$79.49",
+    quantity: 64,
+    total: 1965.81,
+  },
+];
+
+export const orderHistory = [
+  {
+    orderId: "#CM9801",
+    user: "Natali Craig",
+    project: "Landing Page",
+    address: "Meadow Lane Oakland",
+    date: "Just now",
+    status: "In Progress",
+  },
+  {
+    orderId: "#CM9802",
+    user: "Kate Morrison",
+    project: "CRM Admin pages",
+    address: "Larry San Francisco",
+    date: "A minute ago",
+    status: "Complete",
+  },
+  {
+    orderId: "#CM9803",
+    user: "Drew Cano",
+    project: "Client Project",
+    address: "Bagwell Avenue Ocala",
+    date: "1 hour ago",
+    status: "Pending",
+  },
+  {
+    orderId: "#CM9804",
+    user: "Orlando Diggs",
+    project: "Admin Dashboard",
+    address: "Washburn Baton Rouge",
+    date: "Yesterday",
+    status: "Approved",
+  },
+  {
+    orderId: "#CM9801",
+    user: "Natali Craig",
+    project: "Landing Page",
+    address: "Meadow Lane Oakland",
+    date: "Just now",
+    status: "In Progress",
+  },
+  {
+    orderId: "#CM9802",
+    user: "Kate Morrison",
+    project: "CRM Admin pages",
+    address: "Larry San Francisco",
+    date: "A minute ago",
+    status: "Complete",
+  },
+  {
+    orderId: "#CM9803",
+    user: "Drew Cano",
+    project: "Client Project",
+    address: "Bagwell Avenue Ocala",
+    date: "1 hour ago",
+    status: "Pending",
+  },
+  {
+    orderId: "#CM9804",
+    user: "Orlando Diggs",
+    project: "Admin Dashboard",
+    address: "Washburn Baton Rouge",
+    date: "Yesterday",
+    status: "Approved",
+  },
+  {
+    orderId: "#CM9805",
+    user: "Andi Lane",
+    project: "App Landing Page",
+    address: "Nest Lane Olivette",
+    date: "Feb 2, 2023",
+    status: "Rejected",
+  },
+];
+
+
+export const status = {
+  "In Progress": "inprogress",
+  'Approved': "approved",
+  "Rejected": "rejected",
+  "Pending": "pending",
+  "Complete": "complete",
+}as const;

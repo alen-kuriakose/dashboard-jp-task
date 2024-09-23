@@ -1,12 +1,13 @@
 "use client";
-import { Navbar, NotificationPanel } from "@/components";
+import { Navbar, NotificationPanel, OderList } from "@/components";
 import { DashboardSection } from "@/components/sections";
-import { ActiveIndexServicesCard, EnableNotificationPanel } from "@/states/GlobalState";
+import {
+  ActiveIndexServicesCard,
+  EnableNotificationPanel,
+} from "@/states/GlobalState";
 import { useRecoilValue } from "recoil";
 import { SideBarLayout } from "./SideBarLayout";
 import { usePathname } from "next/navigation";
-
-
 
 export function DashboardLayout() {
   const isNotificationPanelActive = useRecoilValue(EnableNotificationPanel);
@@ -16,7 +17,7 @@ export function DashboardLayout() {
 
   const generateBreadcrumbs = () => {
     const pathSegments = pathname.split("/").filter((segment) => segment);
-    const url=pathSegments[0]
+    const url = pathSegments[0];
     const breadcrumbs = pathSegments.map((segment, index) => {
       const href = "/" + pathSegments.slice(0, index + 1).join("/");
       return { href, label: segment };
@@ -39,6 +40,9 @@ export function DashboardLayout() {
               breadcrumbs={breadcrumbs}
             />
             <DashboardSection />
+            <div className="p-7">
+              <OderList />
+            </div>
           </div>
           {isNotificationPanelActive && <NotificationPanel />}
         </div>
