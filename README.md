@@ -30,15 +30,13 @@ This project is a dashboard application built with Next.js, Tailwind CSS, and Re
 3. Install dependencies:
    ```
    npm install
-   # or
-   yarn install
+   
    ```
 
 4. Run the development server:
    ```
    npm run dev
-   # or
-   yarn dev
+
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
