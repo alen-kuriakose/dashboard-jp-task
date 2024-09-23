@@ -7,6 +7,7 @@ import {
   StackedBarChart,
   TableChart,
   WidgetChart,
+  WorldMap,
 } from "../charts";
 import { TextSmallSemibold } from "../typography";
 // type DashboardSectionProps = {};
@@ -21,7 +22,7 @@ export function DashboardSection() {
           eCommerce
         </TextSmallSemibold>
       </div>
-      <div className="grid grid-cols-12 gap-7 overflow-scroll">
+      <div className="grid grid-cols-12 gap-7">
         <div className="col-span-12 lg:col-span-6 grid md:grid-cols-2 gap-7 ">
           {WidgetChartData.map((item, index) => {
             return (
@@ -41,9 +42,15 @@ export function DashboardSection() {
         <div className="col-span-12 lg:col-span-6">
           <StackedBarChart />
         </div>
-        <div className="col-span-12  ">
-          <AreaChartComponent />
+        <div className="col-span-12 grid grid-cols-12 gap-7 h-full">
+          <div className=" col-span-12 lg:col-span-9 h-full">
+            <AreaChartComponent />
+          </div>
+          <div className=" col-span-12 lg:col-span-3">
+            <WorldMap />
+          </div>
         </div>
+
         <div className="col-span-12 grid grid-cols-12 gap-7 h-full">
           <div className=" col-span-12 lg:col-span-9 h-full">
             <TableChart />

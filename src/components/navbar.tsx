@@ -7,11 +7,14 @@ import sun from "@/assets/icons/Sun.svg";
 
 import { cn } from "@/lib/utils";
 import {
-  ActiveIndexServicesCard,
-  EnableNotificationPanel,
+  EnableNotificationPanel
 } from "@/states/GlobalState";
+import { Theme } from "@/utils/constants";
+import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useRecoilState, useRecoilValue } from "recoil";
+import React from "react";
+import { useRecoilState } from "recoil";
+import { NotificationPanel } from "./notificationPanel";
 import { Search } from "./search";
 import {
   Breadcrumb,
@@ -21,17 +24,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "./ui/breadcrumb";
-import { useTheme } from "next-themes";
-import { Theme } from "@/utils/constants";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { NotificationPanel } from "./notificationPanel";
 
 type NavbaeProps = {
   className?: string;
+  breadcrumbs: Array<{href:string,label:string}>;
 };
 
-export const Navbar = ({ className }: NavbaeProps) => {
-  const activeCardIndex = useRecoilValue(ActiveIndexServicesCard);
+export const Navbar = ({ className,breadcrumbs }: NavbaeProps) => {
   const [isNotificationActive, setNotificationActive] = useRecoilState(
     EnableNotificationPanel
   );
@@ -62,20 +62,25 @@ export const Navbar = ({ className }: NavbaeProps) => {
         </div>
         <Breadcrumb className="px-2 hidden lg:block">
           <BreadcrumbList>
+          {breadcrumbs.map((crumb, index) => (
+          <React.Fragment key={crumb.href}>
+            {index > 0 && <BreadcrumbSeparator />}
             <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/"
-                className="font-inter text-sm font-normal text-dark/40 dark:text-white/40"
-              >
-                Dashboard
-              </BreadcrumbLink>
+              {index === breadcrumbs.length - 1 ? (
+                <BreadcrumbPage className="font-inter text-sm font-normal text-dark dark:text-white">
+                  {crumb.label.charAt(0).toUpperCase() + crumb.label.slice(1).toLowerCase()}
+                  </BreadcrumbPage>
+              ) : (
+                <BreadcrumbLink
+                  href={crumb.href}
+                  className="font-inter text-sm font-normal text-dark/40 dark:text-white/40"
+                >
+                  {crumb.label.charAt(0).toUpperCase() + crumb.label.slice(1).toLowerCase()}
+                </BreadcrumbLink>
+              )}
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage className="font-inter text-sm font-normal text-dark dark:text-white">
-                {activeCardIndex}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
+          </React.Fragment>
+        ))}
           </BreadcrumbList>
         </Breadcrumb>
       </div>
@@ -84,8 +89,7 @@ export const Navbar = ({ className }: NavbaeProps) => {
 
         <div
           className={cn(
-            "p-1 dark:invert hover:scale-105 transition-transform duration-200 ease-in-out  ",
-            
+            "p-1 dark:invert hover:scale-105 transition-transform duration-200 ease-in-out  "
           )}
           onClick={() => handleThemeChange()}
         >
@@ -100,7 +104,7 @@ export const Navbar = ({ className }: NavbaeProps) => {
         >
           <Image src={bell} alt="" width={20} height={20} />
         </div>
-        <Sheet >
+        <Sheet>
           <SheetTrigger className="p-0 border-0">
             <div className=" dark:invert md:hover:scale-105 transition-transform duration-200 ease-in-out xl:hidden block">
               <Image src={bell} alt="" width={20} height={20} />

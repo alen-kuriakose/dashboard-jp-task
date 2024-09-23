@@ -26,14 +26,7 @@ export const dashboardSidemenuContent = [
   {
     title: "Default",
     icon: ChartPieSlice,
-    contents: [
-      {
-        title: "Optical",
-      },
-      {
-        title: "Text  ",
-      },
-    ],
+
     url: "/solutions/digitization",
   },
   {
@@ -295,5 +288,38 @@ export const WidgetChartData = [
     fontClass: "text-dark dark:text-dark",
     className: "bg-primary-purple",
     icnClr: "",
+  },
+];
+
+type Location = {
+  city: string;
+  coordinates: [number, number]; // Ensures that coordinates will always be a tuple
+  value: number;
+  progress:number
+};
+export const locations: Location[] = [
+  {
+    city: "New York",
+    coordinates: [40.7128, -74.006],
+    value: 72000,
+    progress:78
+  },
+  {
+    city: "San Francisco",
+    coordinates: [37.7749, -122.4194],
+    value: 39000,
+    progress:26
+  },
+  {
+    city: "Sydney",
+    coordinates: [-33.8688, 151.2093],
+    value: 25000,
+    progress:34
+  },
+  {
+    city: "Singapore",
+    coordinates: [1.3521, 103.8198],
+    value: 61000,
+    progress:70
   },
 ];

@@ -2,7 +2,6 @@ import { ThemeProvider } from "@/components/themes-provider";
 import type { Metadata } from "next";
 import { Inter, Sora, Space_Mono } from "next/font/google";
 import "./globals.css";
-
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font_inter",

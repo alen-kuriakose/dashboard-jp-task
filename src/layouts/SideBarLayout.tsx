@@ -13,8 +13,10 @@ import {
   recents,
 } from "@/utils/helper";
 import { FavSection } from "@/components/favSection";
-
-export function SideBarLayout() {
+type SideBarLayoutProps = {
+  breadcrumbsArray: Array<{href:string,label:string}>;
+};
+export function SideBarLayout({ breadcrumbsArray }: SideBarLayoutProps) {
   return (
     <div>
       <div className="hidden border-r md:block pt-5 h-full ">
@@ -73,10 +75,9 @@ export function SideBarLayout() {
                 />
                 <SidebarMenu header="Pages" content={pageSidemenuContent} />
               </nav>
-              
             </SheetContent>
           </Sheet>
-          <Navbar />
+          <Navbar breadcrumbs={breadcrumbsArray}/>
         </header>
       </div>
     </div>

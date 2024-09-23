@@ -1,16 +1,15 @@
 "use client";
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
 } from "@/components/ui/card";
 import {
-    ChartConfig,
-    ChartContainer,
-    ChartTooltip,
-    ChartTooltipContent,
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Separator } from "@/components/ui/separator";
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
@@ -37,12 +36,12 @@ const chartConfig = {
 
 export function AreaChartComponent() {
   return (
-    <Card className="border-0 bg-primary-light dark:bg-white/15 shadow-none flex flex-col gap-0 ">
+    <Card className="border-0 bg-primary-light dark:bg-white/15 shadow-none flex flex-col gap-0 !h-full">
       <CardHeader className="pb-4">
         <CardTitle>
           <div className="flex w-full gap-4 items-center ">
             <TextSmallSemibold>Revenue</TextSmallSemibold>
-            <Separator
+            <Separator  
               orientation="vertical"
               className="dark:border-white h-3"
             />
@@ -57,10 +56,9 @@ export function AreaChartComponent() {
             </ul>
           </div>
         </CardTitle>
-        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} className="!h-[300px]">
           <LineChart
             // accessibilityLayer
             data={chartData}

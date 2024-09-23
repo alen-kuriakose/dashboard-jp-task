@@ -59,7 +59,7 @@ export const SidebarMenu = ({ content, header }: SidebarMenuProps) => {
                 onClick={() => handleActiveIndex(item.title)}
                 clicked={clicked}
                 key={index + 1}
-                url={item.url}
+                url={header}
                 icon={item.icon}
               />
               // </div>

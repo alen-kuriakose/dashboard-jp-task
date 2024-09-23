@@ -1,3 +1,4 @@
+export { WorldMap } from "./worldMap";
 export { PieChartComponent } from "./pieCharts";
 export { WidgetChart } from "./widgetChart";
 export { StackedBarChart } from "./stackedBarchart";
