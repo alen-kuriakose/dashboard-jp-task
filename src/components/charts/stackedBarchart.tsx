@@ -31,17 +31,8 @@ const chartConfig = {
     color: "rgba(168, 197, 218, 0.5)",
   },
 } satisfies ChartConfig;
-
-// type ChartData = {
-//   title: string;
-//   value1: number;
-//   value2: number;
-// };
-
-// type StackedBarChartProps = {
-//   title: string;
-//   content: Array<ChartData>;
-// };
+/* The `StackedBarChart` function is a React component that renders a stacked bar chart using the
+Recharts library. Here's a breakdown of what the code is doing: */
 
 export function StackedBarChart() {
   return (

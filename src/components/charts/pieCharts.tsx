@@ -50,6 +50,13 @@ const chartConfig = {
     color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig;
+/**
+ * The function `PieChartComponent` returns a React component that displays a pie chart with donut
+ * style and accompanying text information.
+ * @returns The `PieChartComponent` function is returning a JSX structure that represents a pie chart
+ * component with a donut shape and text labels. The component includes a card layout with a title, the
+ * pie chart itself, and a list of data items with corresponding amounts displayed below the chart.
+ */
 
 export function PieChartComponent() {
 

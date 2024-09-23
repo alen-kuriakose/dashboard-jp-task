@@ -8,6 +8,8 @@ import { locations } from "@/utils/helper";
 import { Progress } from "../ui/progress";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+/* This code snippet defines a functional component named `WorldMap` in TypeScript React. Here's a
+breakdown of what the component does: */
 
 export const WorldMap = () => {
   const { theme } = useTheme();

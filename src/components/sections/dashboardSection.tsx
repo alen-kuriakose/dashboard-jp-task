@@ -1,6 +1,12 @@
-// import { ActiveIndexServicesCard } from "@/states/GlobalState";
+/**
+ * The `DashboardSection` function renders a dashboard layout with various charts and widgets for an
+ * eCommerce application.
+ * @returns The `DashboardSection` component is being returned. It consists of various chart components
+ * such as `WidgetChart`, `StackedBarChart`, `AreaChartComponent`, `WorldMap`, `TableChart`, and
+ * `PieChartComponent` arranged in a grid layout within a `div` element. The component also includes a
+ * `TextSmallSemibold` component for displaying the text "eCommerce".
+ */
 import { WidgetChartData } from "@/utils/helper";
-// import { useRecoilValue } from "recoil";
 import {
   AreaChartComponent,
   PieChartComponent,
@@ -10,11 +16,8 @@ import {
   WorldMap,
 } from "../charts";
 import { TextSmallSemibold } from "../typography";
-// type DashboardSectionProps = {};
 
 export function DashboardSection() {
-  //   const activeCardIndex = useRecoilValue(ActiveIndexServicesCard);
-
   return (
     <div className="w-full flex flex-grow p-7 flex-col gap-4 ">
       <div className="px-2 py-1 ">

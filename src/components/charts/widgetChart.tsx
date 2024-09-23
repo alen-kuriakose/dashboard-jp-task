@@ -19,6 +19,8 @@ type WidgetChartProps = {
   iconClr:string
 };
 
+/* This code snippet is defining a React functional component named `WidgetChart` that takes in several
+props: `widgetName`, `mainValue`, `growth`, `isRevRelated`, `className`, `fontClass`, and `iconClr`. */
 export function WidgetChart({
   widgetName,
   mainValue,
