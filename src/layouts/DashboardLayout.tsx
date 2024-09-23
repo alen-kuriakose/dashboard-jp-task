@@ -9,6 +9,7 @@ import {
 import { usePathname } from "next/navigation";
 import { useRecoilValue } from "recoil";
 import { SideBarLayout } from "./SideBarLayout";
+import { orderHistory } from "@/utils/helper";
 
 export function DashboardLayout() {
   const isNotificationPanelActive = useRecoilValue(EnableNotificationPanel);
@@ -54,8 +55,8 @@ export function DashboardLayout() {
                   return <DashboardSection />;
                 case "eCommerce​":
                   return (
-                    <div className="p-7">
-                      <OderList />
+                    <div className=" w-full">
+                      <OderList data={orderHistory} itemsPerPage={10}/>
                     </div>
                   );
                 default:

@@ -22,7 +22,7 @@ export function FavSection({ favList, recentList }: FavSectionProps) {
           )}
           onClick={() => handleSwitch("favorites")}
         >
-          <TextSmallRegular>Favorites</TextSmallRegular>
+          <TextSmallRegular className="cursor-pointer">Favorites</TextSmallRegular>
         </span>
         <span
           className={cn(
@@ -33,7 +33,7 @@ export function FavSection({ favList, recentList }: FavSectionProps) {
           )}
           onClick={() => handleSwitch("recents")}
         >
-          <TextSmallRegular>Recently</TextSmallRegular>
+          <TextSmallRegular className="cursor-pointer">Recently</TextSmallRegular>
         </span>
       </div>
       <div className="flex flex-col  w-full">
