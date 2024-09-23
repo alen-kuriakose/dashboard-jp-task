@@ -98,10 +98,19 @@ export const pageSidemenuContent = [
     icon: IdentificationCard,
     contents: [
       {
-        title: "Optical  ",
+        title: "Overview",
       },
       {
-        title: "Text  ",
+        title: "Projects",
+      },
+      {
+        title: "Campaigns",
+      },
+      {
+        title: "Documents",
+      },
+      {
+        title: "Followers",
       },
     ],
     url: "/solutions/digitization",
