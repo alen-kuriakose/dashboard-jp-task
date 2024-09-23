@@ -4,16 +4,19 @@ import { DashboardSection } from "@/components/sections";
 import {
   ActiveIndexServicesCard,
   EnableNotificationPanel,
+  Activeselection,
 } from "@/states/GlobalState";
 import { useRecoilValue } from "recoil";
 import { SideBarLayout } from "./SideBarLayout";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export function DashboardLayout() {
   const isNotificationPanelActive = useRecoilValue(EnableNotificationPanel);
   const pathname = usePathname();
   //   const searchParams = useSearchParams();
   const activeCardIndex = useRecoilValue(ActiveIndexServicesCard);
+  const activeCard = useRecoilValue(Activeselection);
 
   const generateBreadcrumbs = () => {
     const pathSegments = pathname.split("/").filter((segment) => segment);
@@ -29,6 +32,9 @@ export function DashboardLayout() {
     return [...breadcrumbs];
   };
   const breadcrumbs = generateBreadcrumbs();
+  useEffect(() => {
+    console.log(activeCardIndex);
+  }, [activeCard]);
   return (
     <div className=" grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[212px_1fr] overflow-hidden">
       <SideBarLayout breadcrumbsArray={breadcrumbs} />
@@ -39,10 +45,13 @@ export function DashboardLayout() {
               className="hidden md:flex flex-grow h-fit"
               breadcrumbs={breadcrumbs}
             />
-            <DashboardSection />
-            <div className="p-7">
-              <OderList />
-            </div>
+            {activeCard == "Default" ? (
+              <DashboardSection />
+            ) : (
+              <div className="p-7">
+                <OderList />
+              </div>
+            )}
           </div>
           {isNotificationPanelActive && <NotificationPanel />}
         </div>

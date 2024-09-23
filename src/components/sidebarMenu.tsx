@@ -31,11 +31,14 @@ export const SidebarMenu = ({ content, header }: SidebarMenuProps) => {
     ActiveIndexServicesCard
   );
 
+
   const handleActiveIndex = (index: string) => {
     if (index != activeCardIndex) {
       setclicked(true);
     } else setclicked(!clicked);
+    console.log(index)
     setActiveCardIndex(index);
+    
   };
 
   return (

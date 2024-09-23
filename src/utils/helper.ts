@@ -391,6 +391,14 @@ export const orderHistory = [
     status: "Approved",
   },
   {
+    orderId: "#CM9805",
+    user: "Andi Lane",
+    project: "App Landing Page",
+    address: "Nest Lane Olivette",
+    date: "Feb 2, 2023",
+    status: "Rejected",
+  },
+  {
     orderId: "#CM9801",
     user: "Natali Craig",
     project: "Landing Page",

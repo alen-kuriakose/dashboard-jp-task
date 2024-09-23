@@ -8,11 +8,11 @@ const statusIndicatorVariants = cva(
   {
     variants: {
       variant: {
-        "in-progress": "text-blue-600",
-        complete: "text-green-600",
-        pending: "text-sky-600",
-        approved: "text-amber-600",
-        rejected: "text-red-600",
+        "in-progress": "text-[#8A8CD9]",
+        complete: "text-[#4AA785]",
+        pending: "text-[#59A8D4]",
+        approved: "text-[#FFC555]",
+        rejected: "text-[#1C1C1C66]/40 dark:text-[#FFFFFF66]/40",
       },
     },
     defaultVariants: {
