@@ -1,5 +1,5 @@
 /* eslint-disable */
-
+"use client"
 import { orderHistory } from "@/utils/helper";
 import {} from "lucide-react";
 import React, { useState } from "react";

@@ -34,10 +34,12 @@ export const SidebarMenuItem = ({
   clicked,
   contents,
   url,
-  onClick
+  onClick,
 }: SidebarMenuItemProps) => {
   const [containsTree, setContainsTree] = useState(false);
-  const [childactive, setChildActive] = useRecoilState(ActiveChildIndexServicesCard);
+  const [childactive, setChildActive] = useRecoilState(
+    ActiveChildIndexServicesCard
+  );
 
   useEffect(() => {
     if (contents && contents.length > 0) {
@@ -85,7 +87,7 @@ export const SidebarMenuItem = ({
                     src={arrowRight}
                     alt={"arrow_right"}
                     className={cn(
-                      "m-auto",
+                      "m-auto dark:invert",
                       clicked && isActive
                         ? "rotate-90  transition-all duration-300"
                         : "rotate-0 transition-all duration-300",
@@ -120,6 +122,7 @@ export const SidebarMenuItem = ({
                 "flex flex-col py-1 relative group/feature  col-span-3 cursor:pointer w-full"
               )}
               role="button"
+              onClick={onClick}
             >
               <div
                 className={cn(
@@ -180,10 +183,12 @@ export const SidebarMenuItem = ({
                   className="font-bold relative z-10 ps-[3rem] flex gap-1 transition-all duration-300 py-1"
                   onClick={() => handleChildClick(item.title)}
                 >
-                  <Link href={`/${url.toLowerCase()}/${item.title.toLowerCase()}`}>
-                  <TextSmallRegular className="inline-block font-inter text-primary dark:text-white transition-all duration-300">
-                    {item.title}
-                  </TextSmallRegular>
+                  <Link
+                    href={`/${url.toLowerCase()}/${item.title.toLowerCase()}`}
+                  >
+                    <TextSmallRegular className="inline-block font-inter text-primary dark:text-white transition-all duration-300">
+                      {item.title}
+                    </TextSmallRegular>
                   </Link>
                 </div>
               );

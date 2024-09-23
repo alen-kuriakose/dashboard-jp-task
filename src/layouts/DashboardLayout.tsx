@@ -10,6 +10,7 @@ import { useRecoilValue } from "recoil";
 import { SideBarLayout } from "./SideBarLayout";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { Header4xlSemibold, TextLgRegular } from "@/components/typography";
 
 export function DashboardLayout() {
   const isNotificationPanelActive = useRecoilValue(EnableNotificationPanel);
@@ -45,13 +46,33 @@ export function DashboardLayout() {
               className="hidden md:flex flex-grow h-fit"
               breadcrumbs={breadcrumbs}
             />
-            {activeCard == "Default" ? (
-              <DashboardSection />
-            ) : (
-              <div className="p-7">
-                <OderList />
-              </div>
-            )}
+            {(() => {
+              switch (activeCardIndex) {
+                case "Default":
+                  return <DashboardSection />;
+                case "eCommerce​":
+                  return (
+                    <div className="p-7">
+                      <OderList />
+                    </div>
+                  );
+                default:
+                  return (
+                    <div className="w-full h-full flex items-center justify-center text-dark dark:text-white">
+                      <div className="text-center">
+                        <Header4xlSemibold className="animate-pulse">
+                          Coming Soon
+                        </Header4xlSemibold>
+                        <div className="flex justify-center items-center mb-8">
+                          <TextLgRegular>
+                            We are working on something exiting
+                          </TextLgRegular>
+                        </div>
+                      </div>
+                    </div>
+                  );
+              }
+            })()}
           </div>
           {isNotificationPanelActive && <NotificationPanel />}
         </div>
